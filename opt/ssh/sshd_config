@@ -1,0 +1,25 @@
+#Port 22
+AllowTcpForwarding no
+AuthorizedKeysFile	%h/etc/ssh_keys
+Banner /etc/ssh/banner
+ChrootDirectory %h
+GatewayPorts no
+PasswordAuthentication no
+PermitRootLogin no
+PermitUserEnvironment no
+X11Forwarding no
+X11UseLocalhost no
+PermitTTy no
+LogLevel INFO
+ForceCommand internal-sftp
+MaxSessions 128
+
+# override default of no subsystems
+Subsystem	sftp	internal-sftp
+
+# Example of overriding settings on a per-user basis
+#Match User anoncvs
+#	X11Forwarding no
+#	AllowTcpForwarding no
+#	PermitTTY no
+#	ForceCommand cvs server
