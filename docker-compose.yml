@@ -5,7 +5,9 @@ services:
     build:
       context: .
     volumes:
-      - /lvms/sftp/data:/data
+      - data:/data
     ports:
       - "7777:22"
 
+volumes:
+  data:
